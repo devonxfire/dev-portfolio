@@ -1,0 +1,86 @@
+import ProjectCard from "./ProjectCard";
+import projectGolf from "@/assets/project-golf.png";
+import projectInsta from "@/assets/project-insta.png";
+import projectImdb from "@/assets/project-imdb.png";
+import projectDiary from "@/assets/project-diary.png";
+import projectAudioCalc from "@/assets/project-audio-calc.png";
+
+const projects = [
+  {
+    title: "DTH Score",
+    description:
+      "A comprehensive golfing web application to track golf competitions, manage leaderboards, and record player results with real-time updates.",
+    image: projectGolf,
+    technologies: ["JavaScript", "React", "Node.js"],
+    githubUrl: "https://github.com/devonxfire/dth-score",
+    liveUrl: "https://dth-score-frontend.vercel.app",
+  },
+  {
+    title: "Audio Length Calculator",
+    description:
+      "A desktop application that calculates the total duration of multiple audio files with drag-and-drop support, displaying comprehensive statistics.",
+    image: projectAudioCalc,
+    technologies: ["Python", "Tkinter", "Audio Processing"],
+    githubUrl: "https://github.com/devonxfire/audio-length-calc",
+  },
+  {
+    title: "Insta-Next",
+    description:
+      "A full-featured Instagram clone built with modern web technologies, featuring real-time updates, image uploads, and social interactions.",
+    image: projectInsta,
+    technologies: ["Next.js", "Firebase", "Tailwind CSS"],
+    githubUrl: "https://github.com/devonxfire/insta-next",
+  },
+  {
+    title: "IMDB Clone",
+    description:
+      "A movie database application showcasing trending films, detailed movie information, and user ratings using the TMDB API.",
+    image: projectImdb,
+    technologies: ["Next.js", "Tailwind CSS", "TMDB API"],
+    githubUrl: "https://github.com/devonxfire/imdb-clone",
+    liveUrl: "https://imdb-clone-6o665ueze-devonxfires-projects.vercel.app/",
+  },
+  {
+    title: "DiaryApp",
+    description:
+      "A personal diary application built with C# featuring rich text editing, calendar integration, and secure entry management.",
+    image: projectDiary,
+    technologies: ["C#", ".NET", "WPF"],
+    githubUrl: "https://github.com/devonxfire/DiaryApp",
+  },
+];
+
+const Projects = () => {
+  return (
+    <section id="projects" className="relative py-24 md:py-32">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-dark" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+      <div className="relative z-10 container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-2 mb-4 text-sm font-mono text-primary bg-primary/10 rounded-full border border-primary/20">
+            Featured Work
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            My <span className="text-gradient">Projects</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A selection of projects that showcase my skills and passion for
+            building modern, user-friendly applications.
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.title} {...project} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
