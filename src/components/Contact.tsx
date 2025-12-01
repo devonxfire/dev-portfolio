@@ -24,7 +24,7 @@ const Contact = () => {
           {/* Contact Links */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
-              href="mailto:contact@devonxfire.dev"
+              href="mailto:devonmartindale@gmail.com"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-ember text-primary-foreground font-semibold rounded-xl shadow-ember hover:scale-105 transition-transform duration-300"
             >
               <Mail className="w-5 h-5" />
@@ -60,7 +60,7 @@ const Contact = () => {
               <Linkedin className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
             <a
-              href="mailto:contact@devonxfire.dev"
+              href="mailto:devonmartindale@gmail.com"
               className="p-4 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:shadow-ember transition-all duration-300 group"
             >
               <Mail className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />

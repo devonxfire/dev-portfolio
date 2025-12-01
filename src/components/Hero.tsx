@@ -78,7 +78,7 @@ const Hero = () => {
             <Github className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
           </a>
           <a
-            href="mailto:contact@devonxfire.dev"
+            href="mailto:devonmartindale@gmail.com"
             className="group relative p-4 rounded-xl bg-secondary/50 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-ember"
           >
             <Mail className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
