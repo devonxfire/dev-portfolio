@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 const skills = [
   { name: "JavaScript", level: 90 },
   { name: "React", level: 90 },
@@ -21,8 +23,37 @@ const technologies = [
 ];
 
 const Skills = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isVisible) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [isVisible]);
+
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative py-24 md:py-32 overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute inset-0 bg-card/50" />
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[150px]" />
@@ -56,7 +87,10 @@ const Skills = () => {
                   <div className="h-2 bg-secondary rounded-full overflow-hidden">
                     <div
                       className="h-full bg-gradient-ember rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.level}%` }}
+                      style={{
+                        width: isVisible ? `${skill.level}%` : "0%",
+                        transitionDelay: `${0.1 * index}s`,
+                      }}
                     />
                   </div>
                 </div>
