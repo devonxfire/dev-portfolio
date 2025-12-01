@@ -31,11 +31,12 @@ const Skills = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !isVisible) {
-            setIsVisible(true);
+            // Small delay to ensure smooth rendering
+            setTimeout(() => setIsVisible(true), 100);
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     if (sectionRef.current) {
@@ -86,10 +87,11 @@ const Skills = () => {
                   </div>
                   <div className="h-2 bg-secondary rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-ember rounded-full transition-all duration-1000 ease-out"
+                      className="h-full bg-gradient-ember rounded-full"
                       style={{
                         width: isVisible ? `${skill.level}%` : "0%",
-                        transitionDelay: `${0.1 * index}s`,
+                        transition: 'width 1.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                        transitionDelay: `${0.15 * index}s`,
                       }}
                     />
                   </div>

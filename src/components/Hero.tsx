@@ -102,10 +102,17 @@ const Hero = () => {
           View My Work
           <ChevronDown className="w-5 h-5 animate-bounce" />
         </a>
+
+        {/* Scroll indicator - positioned below button on mobile */}
+        <div className="mt-16 md:hidden animate-bounce">
+          <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2 mx-auto">
+            <div className="w-1 h-2 bg-primary rounded-full animate-pulse" />
+          </div>
+        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-0">
+      {/* Scroll indicator - bottom position for desktop */}
+      <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
           <div className="w-1 h-2 bg-primary rounded-full animate-pulse" />
         </div>
