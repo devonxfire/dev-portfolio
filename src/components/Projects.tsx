@@ -6,7 +6,9 @@ import projectGolf2 from "@/assets/project-golf-2.png";
 import projectGolf3 from "@/assets/project-golf-3.png";
 import projectInsta from "@/assets/project-insta.png";
 import projectImdb from "@/assets/project-imdb.png";
-import projectDiary from "@/assets/project-diary.png";
+import projectFood1 from "@/assets/project-food-1.png";
+import projectFood2 from "@/assets/project-food-2.png";
+import projectFood3 from "@/assets/project-food-3.png";
 import projectAudioCalc from "@/assets/project-audio-calc.png";
 
 const projects = [
@@ -19,6 +21,16 @@ const projects = [
     technologies: ["JavaScript", "React", "Node.js"],
     githubUrl: "https://github.com/devonxfire/dth-score",
     liveUrl: "https://dth-score-frontend.vercel.app",
+  },
+  {
+    title: "Food Friend",
+    description:
+      "A full-stack MERN food ordering application featuring restaurant management, shopping cart, Stripe payment integration, and order tracking.",
+    image: projectFood1,
+    images: [projectFood2, projectFood3],
+    technologies: ["MongoDB", "Express", "React", "Node.js", "Stripe"],
+    githubUrl: "https://github.com/devonxfire/mern-foodfriend-frontend",
+    liveUrl: "https://mern-foodfriend-frontend.onrender.com/",
   },
   {
     title: "Audio Length Calculator",
@@ -44,14 +56,6 @@ const projects = [
     technologies: ["Next.js", "Tailwind CSS", "TMDB API"],
     githubUrl: "https://github.com/devonxfire/imdb-clone",
     liveUrl: "https://imdb-clone-6o665ueze-devonxfires-projects.vercel.app/",
-  },
-  {
-    title: "DiaryApp",
-    description:
-      "A personal diary application built with C# featuring rich text editing, calendar integration, and secure entry management.",
-    image: projectDiary,
-    technologies: ["C#", ".NET", "WPF"],
-    githubUrl: "https://github.com/devonxfire/DiaryApp",
   },
 ];
 
