@@ -36,7 +36,7 @@ const Skills = () => {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '50px' }
+      { threshold: 0.1, rootMargin: "50px" }
     );
 
     if (sectionRef.current) {
@@ -90,7 +90,7 @@ const Skills = () => {
                       className="h-full bg-gradient-ember rounded-full"
                       style={{
                         width: isVisible ? `${skill.level}%` : "0%",
-                        transition: 'width 1.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                        transition: "width 1.5s cubic-bezier(0.4, 0, 0.2, 1)",
                         transitionDelay: `${0.15 * index}s`,
                       }}
                     />
